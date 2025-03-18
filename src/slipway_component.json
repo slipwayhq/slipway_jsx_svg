@@ -2,10 +2,17 @@
   "publisher": "slipwayhq",
   "name": "jsx_svg",
   "version": "0.0.1",
-  "description": null,
-  "input": {},
-  "output": {},
-  "constants": null,
-  "rigging": null,
-  "callouts": null
+  "description": "Converts JS transpiled JSX to SVG.",
+  "input": {
+    "properties": {
+      "jsx_js": { "type": "string" },
+      "width": { "type": "uint32" },
+      "height": { "type": "uint32" }
+    }
+  },
+  "output": {
+    "properties": {
+      "svg": { "type": "string" }
+    }
+  }
 }

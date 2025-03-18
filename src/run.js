@@ -11,8 +11,9 @@ let converted_jsx = eval(jsx_js);
 const svg = await satori(
   converted_jsx,
   {
-    width: 600,
-    height: 400,
+    width: input.width,
+    height: input.height,
+    embedFont: true,
     fonts: [
       {
         name: 'sans-serif',
@@ -23,8 +24,6 @@ const svg = await satori(
     ],
   },
 );
-
-slipway_host.log_info(svg);
 
 export let output = {
   svg: svg,

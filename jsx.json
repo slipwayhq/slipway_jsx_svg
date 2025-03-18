@@ -5,7 +5,9 @@
     "output": {
       "component": "file:src",
       "input": {
-        "jsx": "test.jsx"
+        "jsx_js": "React.createElement(\"h1\", null, \"Hello World!\");",
+        "width": 800,
+        "height": 480
       },
       "allow": [
         { "permission": "all" }
