@@ -1,0 +1,15 @@
+{
+  "description": null,
+  "constants": null,
+  "rigging": {
+    "output": {
+      "component": "file:src",
+      "input": {
+        "jsx": "test.jsx"
+      },
+      "allow": [
+        { "permission": "all" }
+      ]
+    }
+  }
+}
