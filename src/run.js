@@ -8,16 +8,25 @@ export async function run(input) {
   let converted_jsx = eval(jsx_js);
 
   let fonts = [];
-  await try_add_font(fonts, input.default_font || "Arial");
-  // await try_add_font(fonts, input.default_font || "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", sans-serif");
-  // await try_add_font(fonts, input.monospace_font || "Menlo, \"DejaVu Sans Mono\", \"Courier New\", monospace");
+  if (input.fonts && input.fonts.length > 0) {
+    for (let i = 0; i < input.fonts.length; i++) {
+      let font = input.fonts[i];
+      if (!font) {
+        continue;
+      }
+      await try_add_font(fonts, font);
+    }
+  }
+  else {
+    await try_add_font(fonts, input.default_font || "\"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif");
+  }
 
   const svg = await satori(
     converted_jsx,
     {
       width: input.width,
       height: input.height,
-      embedFont: input.embed_font || false, // Disabled by default because slipwayhq.svg has better font support.
+      embedFont: input.embed_font ?? true,
       debug: input.debug,
       fonts,
       loadAdditionalAsset: async (code, segment) => {

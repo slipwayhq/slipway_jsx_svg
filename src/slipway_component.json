@@ -11,7 +11,7 @@
     },
     "optionalProperties": {
       "debug": { "type": "boolean" },
-      "default_font": { "type": "string" },
+      "fonts": { "elements": { "type": "string" }},
       "data": {},
       "embed_font": { "type": "boolean" }
     }

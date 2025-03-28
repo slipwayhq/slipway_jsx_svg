@@ -14865,14 +14865,14 @@ function parseFvarAxis(data, start, names) {
     axis.defaultValue = p.parseFixed();
     axis.maxValue = p.parseFixed();
     p.skip('uShort', 1); // reserved for flags; no values defined
-    axis.name = names[p.parseUShort()] || {};
+    axis.name = (names && names[p.parseUShort()]) || {};
     return axis;
 }
 
 function parseFvarInstance(data, start, axes, names) {
     var inst = {};
     var p = new parse.Parser(data, start);
-    inst.name = names[p.parseUShort()] || {};
+    inst.name = (names && names[p.parseUShort()]) || {};
     p.skip('uShort', 1); // reserved for flags; no values defined
 
     inst.coordinates = {};
