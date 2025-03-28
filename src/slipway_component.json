@@ -8,6 +8,12 @@
       "jsx_js": { "type": "string" },
       "width": { "type": "uint32" },
       "height": { "type": "uint32" }
+    },
+    "optionalProperties": {
+      "debug": { "type": "boolean" },
+      "default_font": { "type": "string" },
+      "data": {},
+      "embed_font": { "type": "boolean" }
     }
   },
   "output": {
