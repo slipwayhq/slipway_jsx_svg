@@ -10,6 +10,7 @@
       "height": { "type": "uint32" }
     },
     "optionalProperties": {
+      "utils_js": { "type": "string" },
       "debug": { "type": "boolean" },
       "fonts": { "elements": { "type": "string" }},
       "data": {},

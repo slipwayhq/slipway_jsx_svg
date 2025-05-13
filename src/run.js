@@ -3,9 +3,20 @@ import satori, { React } from 'satori.js' // React is required by the `eval` bel
 export async function run(input) {
   // This allows the JSX to bind to `data.*`.
   let data = input.data;
+  let utils = {};
+
+  let utils_js = input.utils_js;
+  if (utils_js) {
+    console.debug("Evaluating utils_js...");
+    eval(utils_js);
+    console.debug("...done.");
+    console.debug("Object utils contains the following keys: " + Object.keys(utils));
+  }
 
   let jsx_js = input.jsx_js;
+  console.debug("Evaluating jsx_js...");
   let converted_jsx = eval(jsx_js);
+  console.debug("...done.");
 
   let fonts = [];
   if (input.fonts && input.fonts.length > 0) {
