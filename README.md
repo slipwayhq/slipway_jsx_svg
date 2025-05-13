@@ -17,6 +17,7 @@ is not intended to be used directly.
 
 ## Optional Inputs
 
+- `utils_js`: A string containing javascript that adds utility functions to the `utils` object in scope.
 - `data`: Data which the JSX can bind to.
 - `fonts`: An array of fonts used by the JSX. If only one font is specified it will be used as the default font.
 - `debug`: Whether to draw bounding boxes to help with debugging.
@@ -36,7 +37,7 @@ If the JSX contains images which need to be loaded from the internet, then HTTP 
 
 Test the component by running the following command and pasting in the input when prompted:
 ```
-slipway run-component "slipwayhq.jsx_svg.0.5.0" --allow-fonts
+slipway run-component "slipwayhq.jsx_svg.0.5.1" --allow-fonts
 ```
 
 Input:
@@ -47,7 +48,8 @@ Input:
   "data": {
     "text": "Hello, World"
   },
-  "jsx_js": "React.createElement(\"div\", {\n    style: {\n        height: '100%',\n        width: '100%',\n        display: 'flex',\n        flexDirection: 'column',\n        alignItems: 'center',\n        justifyContent: 'center',\n        backgroundColor: '#fff',\n        fontSize: 32,\n        fontWeight: 600\n    }\n}, React.createElement(\"svg\", {\n    width: \"75\",\n    viewBox: \"0 0 75 65\",\n    fill: \"#000\",\n    style: {\n        margin: '0 75px'\n    }\n}, React.createElement(\"path\", {\n    d: \"M37.59.25l36.95 64H.64l36.95-64z\"\n})), React.createElement(\"div\", {\n    style: {\n        marginTop: 40\n    }\n}, data.text));\n"
+  "utils_js": "utils.getFill = () => { return \"#000\"; }",
+  "jsx_js": "React.createElement(\"div\", {\n    style: {\n        height: '100%',\n        width: '100%',\n        display: 'flex',\n        flexDirection: 'column',\n        alignItems: 'center',\n        justifyContent: 'center',\n        backgroundColor: '#fff',\n        fontSize: 32,\n        fontWeight: 600\n    }\n}, React.createElement(\"svg\", {\n    width: \"75\",\n    viewBox: \"0 0 75 65\",\n    fill: utils.getFill(),\n    style: {\n        margin: '0 75px'\n    }\n}, React.createElement(\"path\", {\n    d: \"M37.59.25l36.95 64H.64l36.95-64z\"\n})), React.createElement(\"div\", {\n    style: {\n        marginTop: 40\n    }\n}, data.text));\n"
 }
 ```
 
