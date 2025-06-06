@@ -1,3 +1,9 @@
+> Important: This has been merged into the
+[`slipway_jsx` repository](https://github.com/slipwayhq/slipway_jsx)
+as the `slipwayhq.jsx__svg` sub-component.
+
+---
+
 # `slipwayhq.jsx_svg`
 
 A [Slipway](https://slipway.co/) Component which takes a [JSX definition](https://og-playground.vercel.app/)
